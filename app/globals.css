@@ -1615,6 +1615,53 @@ a {
   color: var(--text);
 }
 
+.platform-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin: 2.25rem 0 0;
+}
+
+.final-cta .platform-links {
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.platform-links-label {
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.platform-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(242, 237, 230, 0.15);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition:
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.platform-links a span {
+  color: var(--accent);
+  font-size: 0.8em;
+}
+
+.platform-links a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
 /* ---------- Acting ---------- */
 
 .page-section {

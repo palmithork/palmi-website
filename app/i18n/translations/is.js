@@ -200,6 +200,7 @@ const is = {
       p1: "Ég tala beint í myndavélina um hugmyndir sem hafa hjálpað mér að skilja sjálfan mig, sambönd og persónulegan þroska betur.",
       goal: "Markmiðið er einfalt:",
       goalText: "að heyra hugmynd, skilja hana og geta nýtt eitthvað úr henni í eigin lífi.",
+      platforms: "Hlaðvarpið er á",
     },
     latest: {
       label: "Þáttur",
@@ -224,6 +225,7 @@ const is = {
     },
     finalCta: {
       title: "Taktu eina hugmynd og notaðu hana.",
+      follow: "Fylgstu með á",
     },
   },
 

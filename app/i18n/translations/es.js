@@ -199,6 +199,7 @@ const es = {
       p1: "Hablo directamente a cámara sobre ideas que me han ayudado a entenderme mejor a mí mismo, mis relaciones y el crecimiento personal.",
       goal: "El objetivo es sencillo:",
       goalText: "escuchar una idea, entenderla y poder aplicar algo de ella en tu propia vida.",
+      platforms: "Encuentra el pódcast en",
     },
     latest: {
       label: "Episodio",
@@ -223,6 +224,7 @@ const es = {
     },
     finalCta: {
       title: "Toma una idea y ponla en práctica.",
+      follow: "Síguelo también en",
     },
   },
 

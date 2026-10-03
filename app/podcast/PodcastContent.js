@@ -5,9 +5,38 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import Lines from "../components/Lines";
 
-// Placeholders: replace with the real channel/show URLs when ready.
-const youtubeHref = "#";
-const spotifyHref = "#";
+const links = {
+  youtube: "https://www.youtube.com/@Lei%C3%B0ina%C3%B0karlmennsku",
+  spotify:
+    "https://open.spotify.com/show/0jVdaoj0r0vJ96zQGXYYSp?si=738QZfs9TrOjOgKuD2pEkQ&utm_source=copy-link",
+  instagram: "https://www.instagram.com/leidin_ad_karlmennsku?stkn=MTNhcmEzMm00M2IycA==",
+  tiktok: "https://www.tiktok.com/@leidinadkarlmennsku?_r=1&_t=ZN-9AFjFBdVwms",
+};
+
+// External links open in a new tab.
+const external = { target: "_blank", rel: "noopener noreferrer" };
+
+const platforms = [
+  { name: "YouTube", href: links.youtube },
+  { name: "Spotify", href: links.spotify },
+  { name: "Instagram", href: links.instagram },
+  { name: "TikTok", href: links.tiktok },
+];
+
+// Quiet row of platform text links (platform names are not translated).
+function PlatformLinks({ label, items }) {
+  return (
+    <p className="platform-links">
+      <span className="platform-links-label">{label}</span>
+      {items.map((platform) => (
+        <a key={platform.name} href={platform.href} {...external}>
+          {platform.name}
+          <span aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </p>
+  );
+}
 
 const episodes = [
   { number: "01", key: "character" },
@@ -20,10 +49,10 @@ function ListenButtons() {
 
   return (
     <>
-      <a href={youtubeHref} className="btn btn--outline">
+      <a href={links.youtube} className="btn btn--outline" {...external}>
         {t("shared.watchOnYoutube")}
       </a>
-      <a href={spotifyHref} className="btn btn--outline">
+      <a href={links.spotify} className="btn btn--outline" {...external}>
         {t("shared.listenOnSpotify")}
       </a>
     </>
@@ -68,6 +97,9 @@ export default function PodcastContent() {
                 <br />
                 {t("podcast.hero.goalText")}
               </p>
+            </div>
+            <div className="reveal" style={{ "--delay": "0.7s" }}>
+              <PlatformLinks label={t("podcast.hero.platforms")} items={platforms} />
             </div>
           </div>
         </section>
@@ -115,7 +147,7 @@ export default function PodcastContent() {
                   <span className="work-number">{episode.number}</span>
                   <h3 className="episode-title">{t(`podcast.episodes.${episode.key}`)}</h3>
                   <p className="episode-text">{t("podcast.episodes.placeholder")}</p>
-                  <a href={youtubeHref} className="play-btn">
+                  <a href={links.youtube} className="play-btn" {...external}>
                     <span className="play-btn-icon" aria-hidden="true" />
                     {t("shared.watch")}
                   </a>
@@ -152,6 +184,10 @@ export default function PodcastContent() {
             <div className="final-cta-actions">
               <ListenButtons />
             </div>
+            <PlatformLinks
+              label={t("podcast.finalCta.follow")}
+              items={platforms.filter((p) => p.name === "Instagram" || p.name === "TikTok")}
+            />
           </div>
         </section>
       </main>

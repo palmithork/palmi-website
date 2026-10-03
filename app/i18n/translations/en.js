@@ -199,6 +199,7 @@ const en = {
       p1: "I speak directly to the camera about ideas that have helped me understand myself, relationships and personal growth more clearly.",
       goal: "The goal is simple:",
       goalText: "hear an idea, understand it, and be able to use something from it in your own life.",
+      platforms: "Find the podcast on",
     },
     latest: {
       label: "Episode",
@@ -223,6 +224,7 @@ const en = {
     },
     finalCta: {
       title: "Take one idea and use it.",
+      follow: "Follow along on",
     },
   },
 
