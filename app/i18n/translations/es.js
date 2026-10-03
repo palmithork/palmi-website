@@ -109,6 +109,28 @@ const es = {
       label: "Portafolio",
       title: "Trabajos seleccionados",
       futureProject: "Próximo proyecto",
+      moreProjects: "Más proyectos",
+      caseStudy: {
+        label: "Trabajo seleccionado para clientes",
+        mainVideo: "Vídeo principal",
+        photography: "Fotografía",
+        reels: "Reels / formato corto",
+      },
+      // Per-client text (client names themselves are not translated).
+      clients: {
+        velvorn: {
+          intro: "Vídeo, fotografía y contenido de formato corto creados para la marca.",
+          photo1Alt: "Vehículos todoterreno y espectadores en un evento de Vélvörn",
+          photo2Alt: "Un soldador trabajando mientras saltan chispas del soplete",
+          photo3Alt: "Una gran planta de cintas transportadoras y cribado bajo un cielo nublado",
+        },
+        hoobla: {
+          intro: "Vídeo, fotografía y contenido de formato corto para Hoobla; pronto se añadirá más material.",
+          photo1Alt: "Una mujer sonriente en un sofá de terciopelo oscuro, en un salón con luz cálida",
+          photo2Alt: "Una mujer ríe mientras habla por teléfono en el puerto, con barcos pesqueros detrás",
+          photo3Alt: "Una mujer con americana azul marino trabajando con un portátil en un salón acogedor",
+        },
+      },
     },
     finalCta: {
       title: "¿Necesitas contenido para tu empresa?",

@@ -39,3 +39,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .claude/
+
+# oversized original videos (compressed -web.mp4 versions are committed instead)
+/public/videos/velvorn/velvorn-main.mp4
+/public/videos/velvorn/velvorn-reel-2.mp4
+/public/videos/velvorn/velvorn-reel-3.mp4

@@ -110,6 +110,28 @@ const is = {
       label: "Verkefni",
       title: "Valin verkefni",
       futureProject: "Næsta verkefni",
+      moreProjects: "Fleiri verkefni",
+      caseStudy: {
+        label: "Valið verkefni fyrir viðskiptavin",
+        mainVideo: "Aðalmyndband",
+        photography: "Ljósmyndir",
+        reels: "Reels / stutt efni",
+      },
+      // Per-client text (client names themselves are not translated).
+      clients: {
+        velvorn: {
+          intro: "Myndband, ljósmyndir og stutt efni unnið fyrir vörumerkið.",
+          photo1Alt: "Torfærubílar og áhorfendur í röð á viðburði hjá Vélvörn",
+          photo2Alt: "Suðumaður að störfum og neistar fljúga frá logsuðutækinu",
+          photo3Alt: "Stór færibanda- og hörpunarvél undir skýjuðum himni",
+        },
+        hoobla: {
+          intro: "Myndband, ljósmyndir og stutt efni fyrir Hoobla — meira efni bætist við fljótlega.",
+          photo1Alt: "Brosandi kona í dökkum flauelssófa í hlýlega lýstri setustofu",
+          photo2Alt: "Kona hlær í símann við höfnina með fiskibáta í bakgrunni",
+          photo3Alt: "Kona í dökkbláum jakka við fartölvu í notalegri setustofu",
+        },
+      },
     },
     finalCta: {
       title: "Vantar þig efni fyrir fyrirtækið þitt?",
