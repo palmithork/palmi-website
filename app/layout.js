@@ -1,5 +1,6 @@
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "./i18n/LanguageProvider";
 
 const display = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
@@ -23,7 +24,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="is" className={`${display.variable} ${sans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

@@ -1,89 +1,28 @@
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Video", href: "#creative-work" },
-  { label: "Personal Growth", href: "#personal-growth" },
-  { label: "Podcast", href: "/podcast" },
-  { label: "Acting", href: "#acting" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+"use client";
 
+import { useLanguage, usePageTitle } from "./i18n/LanguageProvider";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
+
+// Text for each card lives under home.paths.<key> / home.more.<key> in the translation files.
 const paths = [
-  {
-    id: "creative-work",
-    number: "01",
-    title: "Video",
-    text: "Video content for businesses — social media, events, ongoing content and more.",
-    cta: "Explore Video",
-    href: "/video",
-  },
-  {
-    id: "personal-growth",
-    number: "02",
-    title: "Personal Growth",
-    text: "Ideas and practical tools around character, boundaries, communication, confidence and presence.",
-    cta: "Explore Personal Growth",
-    href: "/personal-growth",
-  },
+  { id: "creative-work", key: "video", number: "01", href: "/video" },
+  { id: "personal-growth", key: "personalGrowth", number: "02", href: "/personal-growth" },
 ];
 
 const more = [
-  {
-    id: "podcast",
-    label: "Podcast",
-    title: "Leiðin að karlmennsku",
-    text: "Thoughts on character, confidence, relationships, boundaries and personal development.",
-    cta: "Explore Podcast",
-    href: "/podcast",
-  },
-  {
-    id: "acting",
-    label: "Acting",
-    title: "Acting",
-    text: "A developing creative path — selected screen work, headshots and future showreel material.",
-    cta: "View Acting",
-    href: "/acting",
-  },
-  {
-    id: "about",
-    label: "About",
-    title: "About Pálmi",
-    text: "The story behind the different directions I’ve taken, what I’m building and why.",
-    cta: "About Me",
-    href: "/about",
-  },
+  { id: "podcast", key: "podcast", href: "/podcast" },
+  { id: "acting", key: "acting", href: "/acting" },
+  { id: "about", key: "about", href: "/about" },
 ];
 
 export default function Home() {
+  const { t } = useLanguage();
+  usePageTitle();
+
   return (
     <>
-      <header className="site-header">
-        <a href="/" className="brand">
-          PÁLMI ÞÓR K.
-        </a>
-
-        <nav className="nav-desktop" aria-label="Main">
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <details className="nav-mobile">
-          <summary aria-label="Open menu">
-            <span />
-            <span />
-          </summary>
-          <nav aria-label="Main">
-            {navLinks.map((link) => (
-              <a key={link.label} href={link.href}>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </details>
-      </header>
+      <SiteHeader />
 
       <main>
         <section className="hero">
@@ -100,20 +39,19 @@ export default function Home() {
                 PÁLMI ÞÓR K.
               </h1>
               <p className="hero-headline reveal" style={{ "--delay": "0.3s" }}>
-                Video for businesses.
+                {t("home.hero.headlineVideo")}
                 <br />
-                <em>Personal growth for men.</em>
+                <em>{t("home.hero.headlineGrowth")}</em>
               </p>
               <p className="hero-copy reveal" style={{ "--delay": "0.45s" }}>
-                I create video content for businesses and share what I’ve learned about character,
-                boundaries, communication, confidence and presence.
+                {t("home.hero.copy")}
               </p>
               <div className="hero-actions reveal" style={{ "--delay": "0.65s" }}>
                 <a href="/contact?interest=video" className="btn btn--outline">
-                  Work with me — Video
+                  {t("home.hero.ctaVideo")}
                 </a>
                 <a href="/contact?interest=personal-growth" className="btn btn--outline">
-                  Work with me — Personal Growth
+                  {t("home.hero.ctaGrowth")}
                 </a>
               </div>
             </div>
@@ -143,47 +81,44 @@ export default function Home() {
 
         <section className="intro" aria-labelledby="intro-title">
           <h2 id="intro-title" className="intro-title">
-            I’ve never been just one thing.
+            {t("home.intro.title")}
           </h2>
           <div className="intro-copy">
+            <p>{t("home.intro.p1")}</p>
+            <p>{t("home.intro.p2")}</p>
             <p>
-              My work has taken me in different directions — from creating video for businesses to
-              podcasting, acting and studying personal development.
-            </p>
-            <p>This website brings those parts together.</p>
-            <p>
-              Some people come here because they need content for their business.
+              {t("home.intro.p3a")}
               <br />
-              Others come because they want to work on themselves.
+              {t("home.intro.p3b")}
             </p>
-            <p className="intro-closing">Both are part of what I’m building.</p>
+            <p className="intro-closing">{t("home.intro.closing")}</p>
           </div>
         </section>
 
-        <section className="pillars" aria-label="Main paths">
+        <section className="pillars" aria-label={t("home.paths.label")}>
           {paths.map((path) => (
             <article key={path.id} id={path.id} className="pillar">
               <div className={`pillar-visual pillar-visual--${path.number}`} aria-hidden="true" />
               <div className="pillar-body">
                 <span className="pillar-number">{path.number}</span>
-                <h2 className="pillar-title">{path.title}</h2>
-                <p className="pillar-text">{path.text}</p>
+                <h2 className="pillar-title">{t(`home.paths.${path.key}.title`)}</h2>
+                <p className="pillar-text">{t(`home.paths.${path.key}.text`)}</p>
                 <a href={path.href} className="btn btn--outline pillar-btn">
-                  {path.cta}
+                  {t(`home.paths.${path.key}.cta`)}
                 </a>
               </div>
             </article>
           ))}
         </section>
 
-        <section className="more" aria-label="More from Pálmi">
+        <section className="more" aria-label={t("home.more.label")}>
           {more.map((item) => (
             <article key={item.id} id={item.id} className="more-card">
-              <span className="more-label">{item.label}</span>
-              <h3 className="more-title">{item.title}</h3>
-              <p className="more-text">{item.text}</p>
+              <span className="more-label">{t(`home.more.${item.key}.label`)}</span>
+              <h3 className="more-title">{t(`home.more.${item.key}.title`)}</h3>
+              <p className="more-text">{t(`home.more.${item.key}.text`)}</p>
               <a href={item.href} className="more-cta">
-                {item.cta} <span aria-hidden="true">→</span>
+                {t(`home.more.${item.key}.cta`)} <span aria-hidden="true">→</span>
               </a>
             </article>
           ))}
@@ -192,41 +127,22 @@ export default function Home() {
         <section className="final-cta" aria-labelledby="final-cta-title">
           <div className="final-cta-inner">
             <h2 id="final-cta-title" className="final-cta-title">
-              Let’s build something.
+              {t("home.finalCta.title")}
             </h2>
-            <p className="final-cta-text">
-              Whether you need video content for your business or want to explore my personal-growth
-              work, start here.
-            </p>
+            <p className="final-cta-text">{t("home.finalCta.text")}</p>
             <div className="final-cta-actions">
               <a href="/contact?interest=video" className="btn btn--outline">
-                Start a Video Project
+                {t("home.finalCta.ctaVideo")}
               </a>
               <a href="/personal-growth" className="btn btn--outline">
-                Explore Personal Growth
+                {t("home.finalCta.ctaGrowth")}
               </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="footer-inner">
-          <a href="/" className="brand">
-            PÁLMI ÞÓR K.
-          </a>
-          <nav className="footer-nav" aria-label="Footer">
-            {navLinks
-              .filter((link) => link.label !== "Home")
-              .map((link) => (
-                <a key={link.label} href={link.href}>
-                  {link.label}
-                </a>
-              ))}
-          </nav>
-        </div>
-        <p className="footer-copy">© 2026 Pálmi Þór K.</p>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

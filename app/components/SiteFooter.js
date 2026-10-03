@@ -1,23 +1,28 @@
+"use client";
+
+import { useLanguage } from "../i18n/LanguageProvider";
 import { siteLinks } from "./siteLinks";
 
-export default function SiteFooter() {
+export default function SiteFooter({ links = siteLinks }) {
+  const { t } = useLanguage();
+
   return (
     <footer className="site-footer">
       <div className="footer-inner">
         <a href="/" className="brand">
           PÁLMI ÞÓR K.
         </a>
-        <nav className="footer-nav" aria-label="Footer">
-          {siteLinks
-            .filter((link) => link.label !== "Home")
+        <nav className="footer-nav" aria-label={t("common.footerNav")}>
+          {links
+            .filter((link) => link.key !== "nav.home")
             .map((link) => (
-              <a key={link.label} href={link.href}>
-                {link.label}
+              <a key={link.key} href={link.href}>
+                {t(link.key)}
               </a>
             ))}
         </nav>
       </div>
-      <p className="footer-copy">© 2026 Pálmi Þór K.</p>
+      <p className="footer-copy">{t("common.copyright")}</p>
     </footer>
   );
 }

@@ -1,10 +1,11 @@
-// Absolute links so the navigation works from any page, not just the homepage.
+// Every item opens its own page, so the navigation behaves the same everywhere.
+// `key` is the translation key for the label (see app/i18n/translations).
 export const siteLinks = [
-  { label: "Home", href: "/" },
-  { label: "Video", href: "/video" },
-  { label: "Personal Growth", href: "/#personal-growth" },
-  { label: "Podcast", href: "/podcast" },
-  { label: "Acting", href: "/#acting" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { key: "nav.home", href: "/" },
+  { key: "nav.video", href: "/video" },
+  { key: "nav.personalGrowth", href: "/personal-growth" },
+  { key: "nav.podcast", href: "/podcast" },
+  { key: "nav.acting", href: "/acting" },
+  { key: "nav.about", href: "/about" },
+  { key: "nav.contact", href: "/contact" },
 ];

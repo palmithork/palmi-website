@@ -1,13 +1,19 @@
+"use client";
+
+import { useLanguage } from "../i18n/LanguageProvider";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { siteLinks } from "./siteLinks";
 
-export default function SiteHeader({ current }) {
-  const links = siteLinks.map((link) => (
+export default function SiteHeader({ current, links = siteLinks }) {
+  const { t } = useLanguage();
+
+  const navItems = links.map((link) => (
     <a
-      key={link.label}
+      key={link.key}
       href={link.href}
       aria-current={link.href === current ? "page" : undefined}
     >
-      {link.label}
+      {t(link.key)}
     </a>
   ));
 
@@ -17,17 +23,21 @@ export default function SiteHeader({ current }) {
         PÁLMI ÞÓR K.
       </a>
 
-      <nav className="nav-desktop" aria-label="Main">
-        {links}
-      </nav>
+      <div className="header-end">
+        <nav className="nav-desktop" aria-label={t("common.mainNav")}>
+          {navItems}
+        </nav>
 
-      <details className="nav-mobile">
-        <summary aria-label="Open menu">
-          <span />
-          <span />
-        </summary>
-        <nav aria-label="Main">{links}</nav>
-      </details>
+        <LanguageSwitcher />
+
+        <details className="nav-mobile">
+          <summary aria-label={t("common.openMenu")}>
+            <span />
+            <span />
+          </summary>
+          <nav aria-label={t("common.mainNav")}>{navItems}</nav>
+        </details>
+      </div>
     </header>
   );
 }
