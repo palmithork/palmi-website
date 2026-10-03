@@ -144,14 +144,71 @@ const is = {
     hero: {
       label: "Sjálfsrækt",
       title: "Byggðu upp manneskjuna sem þú vilt verða.",
-      p1: "Ég trúi því að við getum breytt hlutum í fari okkar — meðvitað.",
-      beliefs: [
-        "Sjálfstraust er hægt að þróa.",
-        "Samskipti er hægt að læra.",
-        "Mörk geta orðið sterkari.",
-        "Karakter er hægt að byggja upp meðvitað.",
+      copy: "Vinna með karakter, mörk, samskipti, sjálfstraust og nærveru — með hugmyndum og verkfærum sem þú getur notað í eigin lífi.",
+      cta: "Skoða námskeið og samfélag",
+    },
+    problem: {
+      label: "Af hverju",
+      title: "Af hverju að vinna í sjálfum sér?",
+      intro: "Kannski kannastu við eitthvað af þessu:",
+      items: [
+        "Þú átt erfitt með að setja mörk og segja nei.",
+        "Þú efast um sjálfan þig, jafnvel þegar þú veist hvað þú vilt.",
+        "Samskipti og sambönd verða flóknari en þau þurfa að vera.",
+        "Þú veist hvað þú vilt — en lætur ekki verða af því.",
+        "Þú vilt meira sjálfstraust og meiri nærveru.",
       ],
-      p3: "Sú hugmynd hefur haft gríðarleg áhrif á mitt eigið líf og hún er kjarninn í því sem ég kenni.",
+      closing: "Ekkert af þessu er óbreytanlegt. Þetta eru hlutir sem hægt er að vinna með — meðvitað.",
+    },
+    skool: {
+      label: "Námskeið og samfélag",
+      title: "Nám og samfélag fyrir raunverulegan persónulegan vöxt.",
+      lead: "Þetta er staðurinn þar sem ég set saman það sem ég hef lært um karakter, mörk, samskipti, sjálfstraust og að taka skýrari skref í eigin lífi.",
+      cta: "Fara í Skool",
+      benefits: {
+        title: "Hvað færðu?",
+        course: {
+          title: "Námskeið og kennsluefni",
+          text: "Myndbönd og efni sem fara skref fyrir skref í gegnum hugmyndirnar.",
+        },
+        tasks: {
+          title: "Verkefni og áskoranir",
+          text: "Hagnýt verkefni sem hjálpa þér að prófa hugmyndirnar í þínu eigin lífi.",
+        },
+        community: {
+          title: "Samfélag",
+          text: "Aðrir menn sem vinna að því sama — til að spyrja, deila og læra saman.",
+        },
+        newContent: {
+          title: "Nýtt efni reglulega",
+          text: "Efnið heldur áfram að stækka og nýtt efni bætist við.",
+        },
+        access: {
+          title: "Aðgangur að mér inni í samfélaginu",
+          text: "Ég er sjálfur inni í samfélaginu, tek þátt í umræðum og svara spurningum.",
+        },
+      },
+      themes: {
+        title: "Það sem námskeiðið vinnur með",
+        purpose: "Tilgangur",
+        boundaries: "Mörk og samskipti",
+        confidence: "Sjálfstraust og nærvera",
+        decisions: "Ákvarðanir og aðgerð",
+        character: "Karakter",
+      },
+      gallery: {
+        title: "Innsýn í Skool",
+        videos: "Myndbönd og kennsluefni",
+        tasks: "Skýr verkefni og áskoranir",
+        topics: "Efni um mörk, sjálfstraust og persónulegan vöxt",
+        videosAlt: "Skjáskot úr Skool: kennslumyndband um fjórar hvatningarleiðir með yfirliti yfir námskeiðið til hliðar",
+        tasksAlt: "Skjáskot úr Skool: áskorunin „Prófaðu rammann þinn“ með myndbandi og verkefnalýsingu",
+        topicsAlt: "Skjáskot úr Skool: kennslustundin „Hvað eru mörk?“ með myndbandi við töflu",
+      },
+      final: {
+        title: "Ekki bara horfa á meira efni. Byrjaðu að vinna með það.",
+        text: "Komdu inn í samfélagið, farðu í gegnum efnið og settu það í framkvæmd.",
+      },
     },
     story: {
       label: "Mín saga",
@@ -164,29 +221,7 @@ const is = {
       ],
       statement: "Að vinna í sjálfum sér breytir meiru en því hvernig manni líður með sjálfan sig.",
       statementEmphasis: "Það breytir því hvernig maður kemur fram á öllum sviðum lífsins.",
-    },
-    pillars: {
-      label: "Þrjár stoðir",
-      character: {
-        title: "Karakter",
-        text: "Þú getur ákveðið meðvitað hver þú vilt verða og unnið markvisst að því að verða sá maður.",
-      },
-      boundaries: {
-        title: "Mörk og samskipti",
-        text: "Áttaðu þig á því hvað þú sættir þig við, hvað þú sættir þig ekki við og fyrir hvað þú stendur.",
-      },
-      confidence: {
-        title: "Sjálfstraust og nærvera",
-        text: "Sjálfstraust og nærveru er hægt að þróa. Markmiðið er ekki að verða háværasti maðurinn í herberginu. Markmiðið er að hætta að líða eins og þú þurfir að láta lítið fyrir þér fara.",
-      },
-    },
-    course: {
-      label: "Námskeið",
-      title: "Hagnýt sjálfsrækt fyrir karlmenn sem vilja meira frá sjálfum sér.",
-      p1: "Ég byggði þetta námskeið í kringum þær hugmyndir sem hafa haft mest áhrif á það hvernig ég sé sjálfan mig, sambönd og persónulegan þroska.",
-      p2: "Áherslan er ekki á að verða einhver „alfa-karl“ eða að þykjast vera einhver annar en þú ert.",
-      closing: "Þetta snýst um að byggja sjálfan sig upp — meðvitað.",
-      cta: "Skoða námskeiðið",
+      approach: "Áherslan er ekki á að verða einhver „alfa-karl“ eða að þykjast vera einhver annar en þú ert. Þetta snýst um að byggja sjálfan sig upp — meðvitað.",
     },
     finalCta: {
       title: "Byrjaðu að vinna í sjálfum þér — meðvitað.",
@@ -200,12 +235,14 @@ const is = {
       p1: "Ég tala beint í myndavélina um hugmyndir sem hafa hjálpað mér að skilja sjálfan mig, sambönd og persónulegan þroska betur.",
       goal: "Markmiðið er einfalt:",
       goalText: "að heyra hugmynd, skilja hana og geta nýtt eitthvað úr henni í eigin lífi.",
-      platforms: "Hlaðvarpið er á",
+      listenOn: "Hlusta / horfa á hlaðvarpið",
+      socialOn: "Fylgdu á samfélagsmiðlum",
     },
     latest: {
       label: "Þáttur",
       title: "Nýjasti þátturinn",
       placeholder: "Titill þáttar væntanlegur",
+      play: "Spila nýjasta þáttinn",
     },
     episodes: {
       label: "Safn",

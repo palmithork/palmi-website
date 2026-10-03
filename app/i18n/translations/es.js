@@ -143,14 +143,71 @@ const es = {
     hero: {
       label: "Crecimiento personal",
       title: "Construye a la persona que quieres llegar a ser.",
-      p1: "Creo que podemos cambiar de forma deliberada partes de quienes somos.",
-      beliefs: [
-        "La confianza se puede desarrollar.",
-        "La comunicación se puede aprender.",
-        "Los límites se pueden fortalecer.",
-        "El carácter se puede construir de forma intencionada.",
+      copy: "Trabaja el carácter, los límites, la comunicación, la confianza y la presencia, con ideas y herramientas que puedes usar en tu propia vida.",
+      cta: "Ver el curso y la comunidad",
+    },
+    problem: {
+      label: "Por qué",
+      title: "¿Por qué trabajar en ti mismo?",
+      intro: "Quizá algo de esto te suene:",
+      items: [
+        "Te cuesta poner límites y decir que no.",
+        "Dudas de ti mismo, incluso cuando sabes lo que quieres.",
+        "La comunicación y las relaciones se complican más de lo necesario.",
+        "Sabes lo que quieres, pero no pasas a la acción.",
+        "Quieres más confianza y presencia.",
       ],
-      p3: "Esa idea ha tenido un impacto enorme en mi vida, y está en el centro de lo que enseño.",
+      closing: "Nada de esto es fijo. Son cosas en las que puedes trabajar, de forma deliberada.",
+    },
+    skool: {
+      label: "Curso y comunidad",
+      title: "Formación y comunidad para un crecimiento personal real.",
+      lead: "Aquí reúno lo que he aprendido sobre carácter, límites, comunicación, confianza y cómo dar pasos más claros en tu propia vida.",
+      cta: "Ir a Skool",
+      benefits: {
+        title: "¿Qué obtienes?",
+        course: {
+          title: "Curso y lecciones",
+          text: "Vídeos y material que recorren las ideas paso a paso.",
+        },
+        tasks: {
+          title: "Tareas y retos",
+          text: "Tareas prácticas que te ayudan a poner a prueba las ideas en tu propia vida.",
+        },
+        community: {
+          title: "Comunidad",
+          text: "Otros hombres trabajando en lo mismo, para preguntar, compartir y aprender juntos.",
+        },
+        newContent: {
+          title: "Material nuevo con regularidad",
+          text: "El contenido sigue creciendo y se añade material nuevo con el tiempo.",
+        },
+        access: {
+          title: "Acceso a mí dentro de la comunidad",
+          text: "Estoy en la comunidad, participo en las conversaciones y respondo preguntas.",
+        },
+      },
+      themes: {
+        title: "En qué se centra el curso",
+        purpose: "Propósito",
+        boundaries: "Límites y comunicación",
+        confidence: "Confianza y presencia",
+        decisions: "Decisiones y acción",
+        character: "Carácter",
+      },
+      gallery: {
+        title: "Un vistazo a Skool",
+        videos: "Vídeos y material didáctico",
+        tasks: "Tareas y retos claros",
+        topics: "Contenido sobre límites, confianza y crecimiento personal",
+        videosAlt: "Captura de Skool: una lección en vídeo sobre cuatro motores de la motivación, con el índice del curso al lado",
+        tasksAlt: "Captura de Skool: el reto «Pon a prueba tu marco» con un vídeo y la descripción de la tarea",
+        topicsAlt: "Captura de Skool: la lección «¿Qué son los límites?» con un vídeo frente a una pizarra",
+      },
+      final: {
+        title: "No te limites a ver más contenido. Empieza a trabajar con él.",
+        text: "Únete a la comunidad, recorre el material y llévalo a la práctica.",
+      },
     },
     story: {
       label: "Mi historia",
@@ -163,29 +220,7 @@ const es = {
       ],
       statement: "Trabajar en ti mismo cambia mucho más que cómo te sientes contigo mismo.",
       statementEmphasis: "Cambia cómo te muestras en todos los ámbitos de tu vida.",
-    },
-    pillars: {
-      label: "Tres pilares",
-      character: {
-        title: "Carácter",
-        text: "Puedes decidir de forma consciente en quién quieres convertirte y trabajar para llegar a ser esa persona.",
-      },
-      boundaries: {
-        title: "Límites y comunicación",
-        text: "Entiende qué aceptas, qué no aceptas y qué defiendes.",
-      },
-      confidence: {
-        title: "Confianza y presencia",
-        text: "La confianza y la presencia se pueden desarrollar. El objetivo no es ser el que más ruido hace en la sala. El objetivo es dejar de sentir que tienes que desaparecer en ella.",
-      },
-    },
-    course: {
-      label: "Curso",
-      title: "Desarrollo personal práctico para hombres que quieren más de sí mismos.",
-      p1: "Creé este curso en torno a las ideas que más han influido en cómo me veo a mí mismo, en mis relaciones y en mi crecimiento personal.",
-      p2: "No se trata de convertirte en un «macho alfa» ni de fingir ser alguien que no eres.",
-      closing: "Se trata de construirte a ti mismo de forma deliberada.",
-      cta: "Explorar el curso",
+      approach: "No se trata de convertirte en un «macho alfa» ni de fingir ser alguien que no eres. Se trata de construirte a ti mismo de forma deliberada.",
     },
     finalCta: {
       title: "Empieza a trabajar en ti mismo de forma deliberada.",
@@ -199,12 +234,14 @@ const es = {
       p1: "Hablo directamente a cámara sobre ideas que me han ayudado a entenderme mejor a mí mismo, mis relaciones y el crecimiento personal.",
       goal: "El objetivo es sencillo:",
       goalText: "escuchar una idea, entenderla y poder aplicar algo de ella en tu propia vida.",
-      platforms: "Encuentra el pódcast en",
+      listenOn: "Escucha / mira el pódcast",
+      socialOn: "Síguelo en redes sociales",
     },
     latest: {
       label: "Episodio",
       title: "Último episodio",
       placeholder: "Título del episodio próximamente",
+      play: "Reproducir el último episodio",
     },
     episodes: {
       label: "Archivo",

@@ -143,14 +143,71 @@ const en = {
     hero: {
       label: "Personal Growth",
       title: "Build the person you want to become.",
-      p1: "I believe we can deliberately change parts of who we are.",
-      beliefs: [
-        "Confidence can be developed.",
-        "Communication can be learned.",
-        "Boundaries can become stronger.",
-        "Character can be built intentionally.",
+      copy: "Work on character, boundaries, communication, confidence and presence — with ideas and tools you can use in your own life.",
+      cta: "Explore the course & community",
+    },
+    problem: {
+      label: "Why",
+      title: "Why work on yourself?",
+      intro: "Maybe some of this sounds familiar:",
+      items: [
+        "You find it hard to set boundaries and say no.",
+        "You doubt yourself, even when you know what you want.",
+        "Communication and relationships get harder than they need to be.",
+        "You know what you want — but you don’t act on it.",
+        "You want more confidence and presence.",
       ],
-      p3: "That idea has had a huge impact on my own life, and it is at the centre of what I teach.",
+      closing: "None of this is fixed. These are things you can work on — deliberately.",
+    },
+    skool: {
+      label: "Course & community",
+      title: "Learning and community for real personal growth.",
+      lead: "This is where I bring together what I’ve learned about character, boundaries, communication, confidence and taking clearer steps in your own life.",
+      cta: "Go to Skool",
+      benefits: {
+        title: "What do you get?",
+        course: {
+          title: "Course and lessons",
+          text: "Videos and material that work through the ideas step by step.",
+        },
+        tasks: {
+          title: "Tasks and challenges",
+          text: "Practical tasks that help you test the ideas in your own life.",
+        },
+        community: {
+          title: "Community",
+          text: "Other men working on the same things — to ask, share and learn together.",
+        },
+        newContent: {
+          title: "New material regularly",
+          text: "The material keeps growing, with new content added over time.",
+        },
+        access: {
+          title: "Access to me inside the community",
+          text: "I’m in the community myself, taking part in discussions and answering questions.",
+        },
+      },
+      themes: {
+        title: "What the course works on",
+        purpose: "Purpose",
+        boundaries: "Boundaries & communication",
+        confidence: "Confidence & presence",
+        decisions: "Decisions & action",
+        character: "Character",
+      },
+      gallery: {
+        title: "A look inside Skool",
+        videos: "Videos and lessons",
+        tasks: "Clear tasks and challenges",
+        topics: "Material on boundaries, confidence and personal growth",
+        videosAlt: "Skool screenshot: a video lesson on four drivers of motivation, with the course outline alongside",
+        tasksAlt: "Skool screenshot: the challenge “Test your frame” with a video and task description",
+        topicsAlt: "Skool screenshot: the lesson “What are boundaries?” with a whiteboard video",
+      },
+      final: {
+        title: "Don’t just watch more content. Start working with it.",
+        text: "Join the community, work through the material and put it into practice.",
+      },
     },
     story: {
       label: "My story",
@@ -163,29 +220,7 @@ const en = {
       ],
       statement: "Working on yourself changes more than how you feel about yourself.",
       statementEmphasis: "It changes how you show up in your entire life.",
-    },
-    pillars: {
-      label: "Three pillars",
-      character: {
-        title: "Character",
-        text: "You can deliberately decide who you want to become and work toward developing that person.",
-      },
-      boundaries: {
-        title: "Boundaries & Communication",
-        text: "Understand what you accept, what you do not accept and what you stand for.",
-      },
-      confidence: {
-        title: "Confidence & Presence",
-        text: "Confidence and presence can be developed. The goal is not to become the loudest man in the room. The goal is to stop feeling like you have to disappear inside the room.",
-      },
-    },
-    course: {
-      label: "Course",
-      title: "Practical personal development for men who want more from themselves.",
-      p1: "I created this course around the ideas that have had the biggest impact on the way I see myself, relationships and personal growth.",
-      p2: "The focus is not on becoming an “alpha male” or pretending to be somebody you are not.",
-      closing: "It is about building yourself deliberately.",
-      cta: "Explore the Course",
+      approach: "The focus is not on becoming an “alpha male” or pretending to be somebody you are not. It is about building yourself deliberately.",
     },
     finalCta: {
       title: "Start working on yourself deliberately.",
@@ -199,12 +234,14 @@ const en = {
       p1: "I speak directly to the camera about ideas that have helped me understand myself, relationships and personal growth more clearly.",
       goal: "The goal is simple:",
       goalText: "hear an idea, understand it, and be able to use something from it in your own life.",
-      platforms: "Find the podcast on",
+      listenOn: "Listen / watch the podcast",
+      socialOn: "Follow on social media",
     },
     latest: {
       label: "Episode",
       title: "Latest episode",
       placeholder: "Episode title coming soon",
+      play: "Play the latest episode",
     },
     episodes: {
       label: "Archive",
