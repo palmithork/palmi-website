@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage, usePageTitle } from "./i18n/LanguageProvider";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
@@ -56,14 +57,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-portrait reveal" style={{ "--delay": "0.5s" }} aria-hidden="true">
-              <div className="portrait-frame">
-                {/* Replace .portrait-placeholder with <img className="portrait-photo" … /> when the photo is ready */}
-                <div className="portrait-placeholder">
-                  <svg className="portrait-silhouette" viewBox="0 0 400 500" preserveAspectRatio="xMidYMax meet">
-                    <path d="M200 92c-44 0-74 36-74 84 0 34 14 62 34 78v26c-62 10-120 40-142 96-8 20-12 70-14 124h392c-2-54-6-104-14-124-22-56-80-86-142-96v-26c20-16 34-44 34-78 0-48-30-84-74-84z" />
-                  </svg>
-                </div>
+            <div className="hero-portrait reveal" style={{ "--delay": "0.5s" }}>
+              <div className="portrait-frame portrait-frame--photo">
+                <Image
+                  src="/images/1-177.jpg"
+                  alt="Pálmi Þór K."
+                  fill
+                  priority
+                  sizes="(max-width: 900px) min(100vw, 520px), 620px"
+                  className="portrait-photo portrait-photo--hero"
+                />
                 <div className="portrait-light" />
                 <div className="portrait-grain" />
                 <span className="portrait-corner portrait-corner--tl" />

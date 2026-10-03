@@ -459,6 +459,25 @@ a {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* Real photo: lighter overlays so the face stays clear */
+
+/* ~18% zoom, anchored low so the crop trims wall above the head rather than the body */
+.portrait-photo--hero {
+  object-position: 50% 25%;
+  transform: scale(1.18);
+  transform-origin: 40% 78%;
+}
+
+.portrait-frame--photo .portrait-light {
+  background:
+    radial-gradient(ellipse 95% 85% at 45% 40%, transparent 55%, rgba(0, 0, 0, 0.4) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, transparent 15%, transparent 78%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.portrait-frame--photo .portrait-grain {
+  opacity: 0.07;
+}
+
 .portrait-corner {
   position: absolute;
   z-index: 4;
