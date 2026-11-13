@@ -1,13 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage, usePageTitle } from "../i18n/LanguageProvider";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import Lines from "../components/Lines";
 import {
   SkoolBenefits,
   SkoolButton,
   SkoolCta,
   SkoolOffer,
+  PriceLine,
   SkoolPreview,
   SkoolThemes,
 } from "./SkoolSection";
@@ -31,21 +34,39 @@ export default function PersonalGrowthContent() {
             <div className="hero-vignette" />
           </div>
 
-          <div className="page-hero-inner">
-            <p className="section-label reveal" style={{ "--delay": "0.1s" }}>
-              {t("personalGrowth.hero.label")}
-            </p>
-            <h1 className="pg-hero-title reveal" style={{ "--delay": "0.2s" }}>
-              {t("personalGrowth.hero.title")}
-            </h1>
-            <p className="pg-hero-copy reveal" style={{ "--delay": "0.35s" }}>
-              {t("personalGrowth.hero.copy")}
-            </p>
-            <div className="reveal" style={{ "--delay": "0.5s" }}>
-              <a href="#skool" className="btn btn--primary pg-hero-btn">
-                {t("personalGrowth.hero.cta")}
-                <span aria-hidden="true">↓</span>
-              </a>
+          <div className="page-hero-inner pg-hero-grid">
+            <div className="pg-hero-text">
+              <p className="section-label reveal" style={{ "--delay": "0.1s" }}>
+                {t("personalGrowth.hero.label")}
+              </p>
+              <h1 className="pg-hero-title reveal" style={{ "--delay": "0.2s" }}>
+                {t("personalGrowth.hero.title")}
+              </h1>
+              <p className="pg-hero-copy reveal" style={{ "--delay": "0.35s" }}>
+                {t("personalGrowth.hero.copy")}
+              </p>
+              <div className="reveal" style={{ "--delay": "0.5s" }}>
+                <a href="#skool" className="btn btn--primary pg-hero-btn">
+                  {t("personalGrowth.hero.cta")}
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+              <PriceLine
+                className="pg-problem-intro reveal"
+                style={{ "--delay": "0.6s" }}
+                communityKey="communityHero"
+              />
+            </div>
+
+            <div className="pg-hero-media reveal" style={{ "--delay": "0.45s" }}>
+              <Image
+                src="/images/personal-growth/attraction-hero.jpg"
+                alt={t("personalGrowth.hero.imageAlt")}
+                fill
+                priority
+                sizes="(max-width: 900px) 100vw, 520px"
+                className="pg-hero-img"
+              />
             </div>
           </div>
         </section>
@@ -69,7 +90,27 @@ export default function PersonalGrowthContent() {
           </div>
         </section>
 
-        {/* 3–7. Skool offer, what you get, topics, preview, repeated CTA */}
+        {/* 3. What you get out of the course */}
+        <section className="pg-section pg-gains" aria-labelledby="gains-title">
+          <h2 id="gains-title" className="pg-title">
+            {t("personalGrowth.gains.title")}
+          </h2>
+          <ul className="pg-gains-list">
+            {t("personalGrowth.gains.items").map((item, i) => (
+              <li key={i} className="pg-gain">
+                <svg className="pg-gain-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <path d="M3 8.5l3.2 3.2L13 4.8" />
+                </svg>
+                <div>
+                  <h3 className="pg-gain-title">{item.title}</h3>
+                  <p className="pg-gain-text">{item.text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* 4–8. Skool offer, what you get, topics, preview, repeated CTA */}
         <section id="skool" className="pg-section skool" aria-labelledby="skool-title">
           <SkoolOffer />
           <SkoolBenefits />
@@ -78,7 +119,22 @@ export default function PersonalGrowthContent() {
           <SkoolCta />
         </section>
 
-        {/* 8. Personal story (why me) */}
+        {/* 9. Attraction */}
+        <section className="pg-section pg-story" aria-labelledby="attraction-title">
+          <div>
+            <p className="section-label">{t("personalGrowth.attraction.label")}</p>
+            <h2 id="attraction-title" className="pg-title">
+              {t("personalGrowth.attraction.title")}
+            </h2>
+          </div>
+          <div className="pg-story-copy">
+            {t("personalGrowth.attraction.paragraphs").map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
+        </section>
+
+        {/* 10. Personal story (why me) */}
         <section className="pg-section pg-story" aria-labelledby="story-title">
           <div>
             <p className="section-label">{t("personalGrowth.story.label")}</p>
@@ -88,25 +144,31 @@ export default function PersonalGrowthContent() {
           </div>
           <div className="pg-story-copy">
             {t("personalGrowth.story.paragraphs").map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
+              <p key={i}>{Array.isArray(paragraph) ? <Lines lines={paragraph} /> : paragraph}</p>
             ))}
             <blockquote className="pg-statement">
               {t("personalGrowth.story.statement")}{" "}
               <em>{t("personalGrowth.story.statementEmphasis")}</em>
             </blockquote>
-            <p className="pg-approach">{t("personalGrowth.story.approach")}</p>
+            <p>{t("personalGrowth.story.note")}</p>
           </div>
         </section>
 
-        {/* 9. Closing */}
+        {/* 11. Closing */}
         <section className="final-cta pg-final" aria-labelledby="pg-cta-title">
           <div className="final-cta-inner">
             <h2 id="pg-cta-title" className="final-cta-title">
               {t("personalGrowth.finalCta.title")}
             </h2>
+            <p className="final-cta-text">
+              {t("personalGrowth.finalCta.line")}
+              <br />
+              {t("personalGrowth.finalCta.extra")}
+            </p>
             <div className="pg-final-action">
-              <SkoolButton />
+              <SkoolButton labelKey="courseCta" />
             </div>
+            <PriceLine className="final-cta-text" />
           </div>
         </section>
       </main>

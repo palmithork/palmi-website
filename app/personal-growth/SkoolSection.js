@@ -1,6 +1,7 @@
 "use client";
 
 // Building blocks for the Skool course & community offer on /personal-growth.
+import { Fragment } from "react";
 import Image from "next/image";
 import { useLanguage } from "../i18n/LanguageProvider";
 
@@ -9,9 +10,9 @@ export const SKOOL_URL = "https://www.skool.com/palmi-test-hopur-1-1443";
 // External links open in a new tab.
 const external = { target: "_blank", rel: "noopener noreferrer" };
 
-const benefits = ["course", "tasks", "community", "newContent", "access"];
+const benefits = ["videos", "tasks", "community", "material", "access"];
 
-const themes = ["purpose", "boundaries", "confidence", "decisions", "character"];
+const themes = ["purpose", "motivation", "boundaries", "framePresence", "credibility"];
 
 // Shown uncropped at their natural (wide) shape. Order follows the captions.
 const screenshots = [
@@ -25,18 +26,56 @@ function useSkoolText() {
   return (key) => t(`personalGrowth.skool.${key}`);
 }
 
-export function SkoolButton({ className = "" }) {
+// Same Skool link everywhere; only the label differs ("cta" or "courseCta").
+export function SkoolButton({ className = "", labelKey = "cta" }) {
   const k = useSkoolText();
 
   return (
     <a href={SKOOL_URL} className={`btn btn--primary skool-btn ${className}`} {...external}>
-      {k("cta")}
+      {k(labelKey)}
       <span aria-hidden="true">↗</span>
     </a>
   );
 }
 
-// Offer panel — headline, lead and the first Skool CTA.
+// Course prices (and the free community line), shown near the course buttons.
+// The course price lines come first; the free community line is smaller and fainter.
+export function PriceLine({ className = "", style, communityKey = "community" }) {
+  const { t } = useLanguage();
+
+  return (
+    <p className={className} style={style}>
+      {t("personalGrowth.price.offer")}
+      <br />
+      {t("personalGrowth.price.regular")}
+      <span className="pg-price-note">{t(`personalGrowth.price.${communityKey}`)}</span>
+    </p>
+  );
+}
+
+// Paragraphs inside one text block; a nested array is a set of short lines.
+function TextBlocks({ blocks }) {
+  return blocks.map((block, i) => (
+    <Fragment key={i}>
+      {i > 0 && (
+        <>
+          <br />
+          <br />
+        </>
+      )}
+      {Array.isArray(block)
+        ? block.map((line, j) => (
+            <Fragment key={j}>
+              {j > 0 && <br />}
+              {line}
+            </Fragment>
+          ))
+        : block}
+    </Fragment>
+  ));
+}
+
+// Offer panel: headline, lead and the first Skool CTA.
 export function SkoolOffer() {
   const k = useSkoolText();
 
@@ -46,7 +85,9 @@ export function SkoolOffer() {
       <h2 id="skool-title" className="skool-title">
         {k("title")}
       </h2>
-      <p className="skool-lead">{k("lead")}</p>
+      <p className="skool-lead">
+        <TextBlocks blocks={k("lead")} />
+      </p>
       <SkoolButton />
     </div>
   );
@@ -125,10 +166,15 @@ export function SkoolCta() {
   return (
     <div className="skool-cta">
       <div>
-        <h3 className="skool-cta-title">{k("final.title")}</h3>
+        <h3 className="skool-cta-title">
+          {k("final.title")[0]}
+          <br />
+          {k("final.title")[1]}
+        </h3>
         <p className="skool-cta-text">{k("final.text")}</p>
+        <PriceLine className="skool-cta-text" />
       </div>
-      <SkoolButton />
+      <SkoolButton labelKey="courseCta" />
     </div>
   );
 }
